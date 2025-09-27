@@ -149,10 +149,10 @@ def lsgelu3(x):    # Left-Shifted GELU with 3 range
 def build_model(activation_fn):
     inputs = tf.keras.Input(shape=(28, 28, 1))
     x = tf.keras.layers.Flatten()(inputs) 
-    x = tf.keras.layers.Dense(64, activation=activation_fn)(x)    
-    x = tf.keras.layers.Dense(64, activation=activation_fn)(x)    
-    x = tf.keras.layers.Dense(64, activation=activation_fn)(x)    
-    x = tf.keras.layers.Dense(64, activation=activation_fn)(x)    
+    x = tf.keras.layers.Dense(128, activation=activation_fn)(x)    
+    x = tf.keras.layers.Dense(128, activation=activation_fn)(x)    
+    x = tf.keras.layers.Dense(128, activation=activation_fn)(x)    
+    x = tf.keras.layers.Dense(128, activation=activation_fn)(x)    
     outputs = tf.keras.layers.Dense(10, activation='softmax')(x)
     model = tf.keras.Model(inputs, outputs)
     return model
